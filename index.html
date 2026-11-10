@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiket ke Konser Terhebat Yang Pernah Ada!</title>
+  <style>
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444444;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 930px;
+    padding: 62px 58px 60px 56px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: bold;
+    color: #444444;
+  }
+
+  .subtitle {
+    margin: 18px 0 0 0;
+    font-size: 20px;
+    line-height: 26px;
+    color: #444444;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #e3e3e3;
+    margin: 43px 0 38px 0;
+    height: 0;
+  }
+
+  .row {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 5px;
+  }
+  
+  .row > label.main,
+  .row > .main-label {
+    flex: 0 0 232px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 26px;
+    color: #444444;
+    padding-top: 5px;
+  }
+
+  .field { flex: 1 1 auto; min-width: 0; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #444444;
+    background: #ffffff;
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    padding: 4px 6px;
+    height: 37px;
+    margin: 0;
+    outline: none;
+  }
+
+  ::placeholder { color: #777777; opacity: 1; }
+
+  .small {
+    display: block;
+    font-size: 15px;
+    line-height: 18px;
+    color: #555555;
+    margin-top: 7px;
+  }
+  
+  /* Nama */
+  .r-nama { min-height: 125px; }
+  .pair { display: flex; align-items: flex-start; }
+  .pair .col { display: flex; flex-direction: column; }
+  #nd { width: 135px; }
+  #nb { width: 197px; }
+  .pair .col + .col { margin-left: 9px; }
+
+  /* E-mail */
+  .r-email { min-height: 125px; }
+  #email { width: 407px; max-width: 100%; }
+
+  /* Telepon */
+  .r-tel { min-height: 124px; }
+  #area { width: 259px; }
+  #telp { width: 259px; }
+  .dash {
+    width: 23px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 37px;
+    color: #444444;
+  }
+
+  /* Tempat duduk */
+  .r-seat { min-height: 216px; }
+  .radios { display: flex; flex-direction: column; margin-top: 0; }
+  .opt {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    font-size: 20px;
+    color: #444444;
+  }
+  .opt input[type="radio"] {
+    width: 19px;
+    height: 19px;
+    margin: 0 16px 0 9px;
+  }
+  .opt.other input[type="text"] {
+    width: 157px;
+    height: 36px;
+    font-size: 20px;
+    margin-left: 0;
+  }
+  .radios { padding-top: 0; margin-top: -2px; }
+  
+  /* Jumlah tiket */
+  .r-qty { min-height: 94px; }
+  #qty { width: 94px; }
+
+  /* Pertanyaan */
+  .r-q { min-height: 235px; }
+  textarea {
+    width: 506px;
+    max-width: 100%;
+    height: 153px;
+    padding: 6px 6px;
+    resize: both;
+    display: block;
+  }
+
+  /* Tombol */
+  .r-btn { padding-left: 5px; }
+  .r-btn .spacer { flex: 0 0 242px; }
+  button {
+    width: 203px;
+    height: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #444444;
+    background: #f6f6f6;
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .wrap { padding: 32px 20px 40px 20px; }
+    h1 { font-size: 22px; line-height: 28px; }
+    .subtitle { font-size: 17px; margin-top: 12px; }
+    hr { margin: 28px 0 28px 0; }
+
+    .row { flex-direction: column; padding-left: 0; }
+    .row > label.main,
+    .row > .main-label { flex: none; padding-top: 0; margin-bottom: 8px; font-size: 18px; }
+
+    .r-nama, .r-email, .r-tel, .r-seat, .r-qty, .r-q { min-height: 0; margin-bottom: 28px; }
+
+    .pair { flex-wrap: wrap; }
+    #nd, #nb, #area, #telp { width: 100%; }
+    .pair .col { flex: 1 1 140px; }
+    .pair .col + .col { margin-left: 8px; }
+    .dash { flex: 0 0 18px; width: 18px; }
+    .opt input[type="radio"] { margin-left: 0; }
+
+    .r-btn { padding-left: 0; }
+    .r-btn .spacer { display: none; }
+    button { width: 100%; max-width: 203px; }
+  }
+  
+  </style>
+</head>
+
+<body>
+    <div class="wrap">
+    <h1>Tiket ke Konser Terhebat Yang Pernah Ada!</h1>
+    <p class="subtitle">Dapatkan tiket hari ini sebelum terlambat!</p>
+    <hr>
+
+    <form action="#" method="post">
+
+      <!-- Nama -->
+      <div class="row r-nama">
+        <span class="main-label">Nama</span>
+        <div class="field">
+          <div class="pair">
+            <div class="col">
+              <input type="text" id="nd" name="nama_depan">
+              <span class="small">Nama Depan</span>
+            </div>
+            <div class="col">
+              <input type="text" id="nb" name="nama_belakang">
+              <span class="small">Nama Belakang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-mail -->
+      <div class="row r-email">
+        <label class="main" for="email">E-mail</label>
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder="contoh: nama@contoh.com">
+          <span class="small">contoh@contoh.com</span>
+        </div>
+      </div>
+      
+         <!-- Nomor Telepon -->
+      <div class="row r-tel">
+        <span class="main-label">Nomor Telepon</span>
+        <div class="field">
+          <div class="pair">
+            <div class="col">
+              <input type="tel" id="area" name="kode_area">
+              <span class="small">Kode Area</span>
+            </div>
+            <div class="dash">-</div>
+            <div class="col">
+              <input type="tel" id="telp" name="nomor_telepon">
+              <span class="small">Nomor Telepon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilihan tempat duduk -->
+      <div class="row r-seat">
+        <span class="main-label">Pilihan tempat duduk</span>
+        <div class="field">
+          <div class="radios">
+            <label class="opt"><input type="radio" name="seat" value="panggung-depan">Panggung Depan</label>
+            <label class="opt"><input type="radio" name="seat" value="tengah">Tengah</label>
+            <label class="opt"><input type="radio" name="seat" value="balkon">Balkon</label>
+            <label class="opt other"><input type="radio" name="seat" value="lainnya"><input type="text" name="seat_lainnya" placeholder="Lainnya"></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jumlah Tiket -->
+      <div class="row r-qty">
+        <label class="main" for="qty">Jumlah Tiket</label>
+        <div class="field">
+          <input type="text" id="qty" name="jumlah_tiket" placeholder="contoh: 2">
+        </div>
+      </div>
+
+      <!-- Ada pertanyaan? -->
+      <div class="row r-q">
+        <label class="main" for="pertanyaan">Ada pertanyaan?</label>
+        <div class="field">
+          <textarea id="pertanyaan" name="pertanyaan" placeholder="Ketik di sini..."></textarea>
+        </div>
+      </div>
+
+      <!-- Tombol -->
+      <div class="row r-btn">
+        <div class="spacer"></div>
+        <button type="submit">Dapatkan Tiket!</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+          </html>
